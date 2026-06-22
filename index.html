@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Loja de Bolsas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    button {
+      background: black;
+      color: white;
+      border: none;
+      padding: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #444;
+    }
+
+    #cart {
+      position: fixed;
+      right: 10px;
+      top: 10px;
+      background: white;
+      padding: 15px;
+      width: 220px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      border-radius: 10px;
+    }
+
+    #cart h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Loja de Bolsas 👜</h1>
+</header>
+
+<div id="cart">
+  <h3>Carrinho</h3>
+  <ul id="cart-items"></ul>
+  <p><strong>Total:</strong> R$ <span id="total">0</span></p>
+</div>
+
+<div class="container">
+  
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3" alt="Bolsa 1">
+    <h3>Bolsa Elegante</h3>
+    <p>R$ 120</p>
+    <button onclick="addToCart('Bolsa Elegante', 120)">Comprar</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7" alt="Bolsa 2">
+    <h3>Bolsa Casual</h3>
+    <p>R$ 90</p>
+    <button onclick="addToCart('Bolsa Casual', 90)">Comprar</button>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1618354691792-d1d42acfd860" alt="Bolsa 3">
+    <h3>Bolsa Premium</h3>
+    <p>R$ 250</p>
+    <button onclick="addToCart('Bolsa Premium', 250)">Comprar</button>
+  </div>
+
+</div>
+
+<script>
+  let total = 0;
+
+  function addToCart(name, price) {
+    const list = document.getElementById("cart-items");
+
+    const item = document.createElement("li");
+    item.textContent = name + " - R$ " + price;
+
+    list.appendChild(item);
+
+    total += price;
+    document.getElementById("total").textContent = total;
+  }
+</script>
+
+</body>
+</html>
