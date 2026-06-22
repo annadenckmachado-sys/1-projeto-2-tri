@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bags Style - Bolsas Elegantes</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      background: #222;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1584917865442-de89df76afd3') center/cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 32px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px black;
+    }
+
+    .container {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    button {
+      background: black;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background: #444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Bags Style 👜</h1>
+    <p>As melhores bolsas para seu estilo</p>
+  </header>
+
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Coleção</a>
+    <a href="#">Promoções</a>
+    <a href="#">Contato</a>
+  </nav>
+
+  <div class="hero">
+    Nova coleção 2026
+  </div>
+
+  <div class="container">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7" />
+      <h3>Bolsa Elegante</h3>
+      <p>R$ 199,90</p>
+      <button onclick="comprar('Bolsa Elegante')">Comprar</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1581605405669-fcdf81165afa" />
+      <h3>Bolsa Casual</h3>
+      <p>R$ 149,90</p>
+      <button onclick="comprar('Bolsa Casual')">Comprar</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c" />
+      <h3>Bolsa Premium</h3>
+      <p>R$ 299,90</p>
+      <button onclick="comprar('Bolsa Premium')">Comprar</button>
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Bags Style - Todos os direitos reservados
+  </footer>
+
+  <script>
+    function comprar(produto) {
+      alert("Você escolheu: " + produto + " 🛍️");
+    }
+  </script>
+
+</body>
+</html>
